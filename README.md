@@ -1,11 +1,12 @@
 
 
-<p><img src=" " alt="logo" width="20%" /></p>
+<p align="center"><img src="<a href="https://ibb.co/RpjMSJv"><img src="https://i.ibb.co/rGdLtX7/Whats-App-Image-2023-10-14-at-22-41-22-a47bbd19.jpg" alt="UrbanWayLogo" border="0"></a></p>
 
-# # UrbanWay
+# UrbanWay
 
 - [About Project](#About-Project)
 
+Our project is to build a website for Bus/Train passengers to book their seats easily by tapping at their fingertips. The project aims to create a user-friendly interface that simplifies the ticket booking process and enhances the overall travel experience for users.
 - [Working](#Working)
   - [Login](#Login)
   - [Booking Cab](#Booking-Cab)
