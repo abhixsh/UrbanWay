@@ -1,90 +1,51 @@
+# Urbanway
 
+<p align="center"><a href="https://ibb.co/SXrY0qy"><img src="https://i.ibb.co/WWt8FS5/logo-concept.png" alt="logo-concept" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'></a><br /></p>
 
-<p><img src=" " alt="logo" width="20%" /></p>
-
-# # UrbanWay
-
-- [About Project](#About-Project)
-
-- [Working](#Working)
-  - [Login](#Login)
-  - [Booking Cab](#Booking-Cab)
-  - [Your Bookings](#Your-Bookings)
-  - [Accepted Bookings](#Bookings-Accepted)
-  - [Individual Bookings](#Individual-Bookings)
-  - [Chat Functionality](#Chats)
-
-- [Getting Started](#Getting-Started)
-  - [How to Add Google Maps Api](#oogle-api)
-  - [How to Add Redis Host](#redis-host)
-  - [Setup And Run the Application](#run)
-
-<a id="About-Project"></a>
-
-# About UrbanWay
-
-- Book Cab is a web app that optimizes the rideshare booking approach. This app serves as a single source to help users find the shortest path for multiple destination, shared rides.
-
-- The goal of this project is to figure out the shortest feasible path from a given starting point using an algorithm. The performance of the developed algorithm will be studied for practical use.
-
-
-# How it Works
-- Works on Bellman-Ford algorithm to compute shortest and optimized  path by considering each location as a vertex of the graph.
-- The booking is then paired with max 4 people based on the route and low cost.
-
-### What is Bellman-Ford Algorithm 
-The Bellman–Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph.
-
-## Features and Interfaces
-
-1. Registration page <a id="Login"></a>
-   - ![image]()
-
-2. Booking page <a id="Booking-Cab"></a>
-   - ![image]()
-
-3. Your bookings  <a id="Your-Bookings"></a>
-   - ![image]()
-
-4. Bookings accepted <a id="Bookings-Accepted"></a>
-	- Booking accepted but payment pending 
-   - ![image]()
-	- paying using ethereum (SepoliaETH)
-   - ![image]()
-
-
-5. Bookings accepted <a id="Individual-Bookings"></a>
-	- Booking info of individuals who will be sitting in the same shared cab. 
-   - ![image]()
-
-5. Your route <a id="Individual-Bookings"></a>
-	- See your route on your bookings accepted page. 
-   - ![image](https://user-images.githubusercontent.com/68425016/201683649-67dd6a5c-d217-4a90-983c-fd265760774a.png)
-
-  
-6. Chat Functionality <a id="Chats"></a>
-   - ![image]()
-
-
-<a id="Getting-Started"></a>
-
-## Getting Started
-
-<a id="google-api"></a>
-
-- #### Add google maps API.
-
- 	- Create your billing account at [google maps platform](https://mapsplatform.google.com/) (google console).
-	 - Generate Api key to access the services.
- 	- Add the api to .env file. 
-
-<a id="run"></a>
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+<img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
 
 
 
+## Introduction
+
+Our project is to build a website for Bus/Train passengers to book their seats easily by tapping at their fingertips. The project aims to create a user-friendly interface that simplifies the ticket booking process and enhances the overall travel experience for users.
+
+This website allows users to book their bus tickets, and train tickets, view bus and train schedules, check bus seat availability, buy tickets, view routes, search bus & train availability by source, and destination stops, view available buses and trains, sort & filter buses based on amenities, dropping and boarding points, fare, time, seats available. Users can access the website without creating an account but when booking tickets it will ask for the mobile number and a name. After entering those, users will get an OTP(One-time password) which allows the website to verify the user.
 
 
-- #### Setup
+## Technologies Used
+
+- JavaScript
+- HTML
+- CSS
+- PHP 
+- MySQL
+- Boxicons 
+- 10015.io
+
+## Project Aims
+
+- Provide a seamless and user-friendly ticket booking experience for users.
+- Enable users to easily search and compare bus and train schedules and routes.
+- Implement features such as seat selection, fare calculation, ticket cancellation, and refund requests.
+
+## Site Structure
+
+The project aims to deliver a comprehensive online ticket booking platform that simplifies the process of booking bus and train tickets, provides real-time updates, ensures secure payments, and offers a seamless user experience.
+
+<p align="center">
+
+<a href="https://ibb.co/qDy8KGp"><img src="https://i.ibb.co/D1VFhXQ/Screenshot-158.png" alt="Screenshot-158" border="0"></a><br /><a target='_blank' href='https://emoticoncentral.com/category/growing-heart'></a>
+
+<a href="https://ibb.co/FVrKrDW"><img src="https://i.ibb.co/rsjmjwt/Screenshot-159.png" alt="Screenshot-159" border="0"></a><br /><a target='_blank' href='https://emoticoncentral.com/category/growing-heart'></a><br />
+
+</P>
 
 
-- #### Run Tests using pytest
+## License
+
+This project includes an MIT license attached to it. Details can be found in the LICENSE file.
+
