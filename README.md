@@ -39,7 +39,7 @@ The project aims to deliver a comprehensive online ticket booking platform that 
 
 <a href="https://ibb.co/2MTvK75"><img src="https://i.ibb.co/8xHr8DX/Screenshot-2023-10-17-001652.png" alt="Screenshot-2023-10-17-001652" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'></a><br />
 
-<a href="https://ibb.co/FVrKrDW"><img src="https://i.ibb.co/rsjmjwt/Screenshot-159.png" alt="Screenshot-159" border="0"></a><br /><a target='_blank' href='https://emoticoncentral.com/category/growing-heart'></a><br />
+<a href="https://ibb.co/C80cwT1"><img src="https://i.ibb.co/zxfMm0n/Screenshot-2023-10-17-001750.png" alt="Screenshot-2023-10-17-001750" border="0"></a>
 
 </P>
 
