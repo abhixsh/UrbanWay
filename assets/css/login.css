@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    column-gap: 30px;
+}
+.bg-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    opacity: 30%;
+    background-size: cover;
+}
+.form{
+    position: absolute;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 16px;
+    background: #FFF;
+}
+.form.signup{
+    opacity: 0;
+    pointer-events: none;
+}
+.forms.show-signup .form.signup{
+    opacity: 1;
+    pointer-events: auto;
+}
+.forms.show-signup .form.login{
+    opacity: 0;
+    pointer-events: none;
+}
+header{
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+}
+form{
+    margin-top: 30px;
+}
+.form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.field input,
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+.field input{
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid#CACACA;
+}
+.field input:focus{
+    border-bottom-width: 2px;
+}
+.eye-icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding: 5px;
+}
+.field button{
+    color: #fff;
+    background-color: #0171d3;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.field button:hover{
+    background-color: #0088ff;
+}
+.form-link{
+    text-align: center;
+    margin-top: 15px;
+}
+.form-link span,
+.form-link a{
+    font-size: 14px;
+    font-weight: 400;
+    color: #232836;
+}
+.form a{
+    color: #0171d3;
+    text-decoration: none;
+}
+.form-content a:hover{
+    text-decoration: underline;
+}
+
+/* Showing Errors */
+.field input.error-input {
+    border-color: #ff3860;
+}
+
+.field input.success-input {
+    border-color: #09c372;
+}
+
+.error {
+    color: #ff3860;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .forms {
+        max-width: 100%;
+    }
+
+    .field button {
+        width: 100%;
+    }
+}
+
+/* Loading Animation Begin*/
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    transition: opacity 0.75s, visibility 0.75s;
+  }
+  
+  .loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .ring {
+    --uib-size: 40px;
+    --uib-speed: 2s;
+    --uib-color: black;
+  
+    height: var(--uib-size);
+    width: var(--uib-size);
+    vertical-align: middle;
+    transform-origin: center;
+    animation: rotate var(--uib-speed) linear infinite;
+  }
+  
+  .ring circle {
+    fill: none;
+    stroke: var(--uib-color);
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: stretch calc(var(--uib-speed) * 0.75) ease-in-out infinite;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes stretch {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 200;
+      stroke-dashoffset: -35px;
+    }
+    100% {
+      stroke-dashoffset: -124px;
+    }
+  }
+  
+  /* Loading Animation End 😊*/
+  
+  
