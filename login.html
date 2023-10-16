@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Urbanway - Login </title>
+
+        <!--=============== Favicon ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/login.css">
+                
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+                        
+    </head>
+    <body>
+
+        <!-- Loader -->
+        <div class="loader">
+            <svg class="ring" viewBox="25 25 50 50" stroke-width="5">
+              <circle cx="50" cy="50" r="20" />
+            </svg>
+        </div>
+
+        <!-- Login Form -->
+
+        <section class="container forms">
+
+            <div class="bg-image">
+                <img src="assets/img/hero2.jpg" class="bg-img">
+            </div>
+
+            <div class="form login">
+                <div class="form-content">
+                    <header>Login</header>
+                    <form action="#">
+                        <!-- මෙතෙන්ට Form Action එක දාන්න. -->
+                        <div class="input-control">
+                            <div class="field input-field">
+                                <input type="text" placeholder="Phone Number" class="input phone-number">
+                                <div class="error"></div>
+                            </div>
+                        </div>
+            
+                        <div class="input-control">
+                            <div class="field input-field">
+                                <input type="password" placeholder="PIN" class="password pin">
+                                <i class='bx bx-hide eye-icon'></i>
+                                <div class="error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">Forgot PIN?</a>
+                        </div>
+
+                        <div class="field button-field">
+                            <button>Login</button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Signup Form -->
+            <!-- මේක අල්ලන්න එපා ඔක්කොම Functions වැඩ. 😊 -->
+
+            <div class="form signup">
+                <div class="form-content">
+                    <header>Signup</header>
+                    <form action="#">
+                    <!-- මෙතෙන්ට Form Action එක දාන්න. -->
+                        <div class="input-control">
+                            <div class="field input-field">
+                                <input type="text" placeholder="Phone Number" class="input phone-number">
+                                <div class="error"></div>
+                            </div>
+                        </div>
+            
+                        <div class="input-control">
+                            <div class="field input-field">
+                                <input type="password" placeholder="Create PIN" class="password pin">
+                                <i class='bx bx-hide eye-icon'></i>
+                                <div class="error"></div>
+                            </div>
+                        </div>
+            
+                        <div class="input-control">
+                            <div class="field input-field">
+                                <input type="password" placeholder="Confirm PIN" class="password confirm-pin">
+                                <i class='bx bx-hide eye-icon'></i>
+                                <div class="error"></div>
+                            </div>
+                        </div>
+
+                        <div class="field button-field">
+                            <button>Signup</button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="assets/js/login.js"></script>
+        <script>
+            window.addEventListener("load", () => {
+              const loader = document.querySelector(".loader");
+        
+              loader.classList.add("loader--hidden");
+        
+              loader.addEventListener("transitionend", () => {
+                document.body.removeChild(loader);
+              });
+            });
+          </script>
+      
+    </body>
+</html>
