@@ -17,9 +17,9 @@ This website allows users to book their bus tickets, and train tickets, view bus
 
 ## Technologies Used
 
-- JavaScript
 - HTML
 - CSS
+- JavaScript
 - PHP 
 - MySQL
 - Boxicons 
