@@ -23,7 +23,7 @@ This website allows users to book their bus tickets, and train tickets, view bus
 - PHP 
 - MySQL
 - Boxicons 
-- 10015.io
+- ScrollReveal.js
 
 ## Project Aims
 
