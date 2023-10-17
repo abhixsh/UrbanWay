@@ -800,7 +800,7 @@ width: 100%;
 border-radius: 15px;
 }
 
-/* Style the table header row */
+/*=============== Table Header ===============*/
 #employee_table th {
 background-color: #0088ff;
 color: #fff;
