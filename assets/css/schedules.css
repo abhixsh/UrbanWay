@@ -879,7 +879,7 @@ transition: height 0.3s ease-in-out;
 height: 50px;
 }
 
-/* Style the search input */
+/*=============== Search Input ===============*/
 #search {
 width: 100%;
 border: none;
