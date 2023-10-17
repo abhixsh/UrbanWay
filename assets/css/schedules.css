@@ -908,7 +908,7 @@ cursor: pointer;
 background-color: #ccc;
 }
 
-/* Remove input border when focused */
+/*=============== Remove input border when focused ===============*/
 #search:focus {
 outline: none;
 box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -929,7 +929,7 @@ font-size: 16px;
 outline: none;
 }
 
-/* Style the search input on focus */
+/*=============== Search input on focus ===============*/
 #search:focus {
 border-color: #0056b3; /* Darker blue border on focus */
 }
