@@ -808,7 +808,7 @@ text-align: center;
 padding: 10px;
 }
 
-/* Style the table data rows */
+/*=============== Table Data Rows ===============*/
 #employee_table td {
 border: 1px solid #ccc;
 text-align: center;
