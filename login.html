@@ -16,49 +16,76 @@
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
                         
     </head>
+
     <body>
 
-        <!-- Loader -->
-        <div class="loader">
-            <svg class="ring" viewBox="25 25 50 50" stroke-width="5">
-              <circle cx="50" cy="50" r="20" />
-            </svg>
-        </div>
+        <div class="errorNotification"></div>
+
 
         <!-- Login Form -->
 
         <section class="container forms">
 
             <div class="bg-image">
-                <img src="assets/img/hero2.jpg" class="bg-img">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:rgba(NaN, NaN, NaN, 0);display:block;z-index:1;position:relative" width="1879" height="931" preserveAspectRatio="xMidYMid" viewBox="0 0 1879 931">
+                    <g transform="translate(939.5,465.5) scale(-1,-1) translate(-939.5,-465.5)"><g transform="translate(1459.1454438888727,62.42167616512012) scale(100)" opacity="0.4">
+                      <path d="M6.379204999999999 0 C6.379204999999999 1.5125949999999997 6.6225760500280115 2.0769518043626767 5.866278550028012 3.3868974999999995 S4.499548195637323 4.768256085948709 3.1896025000000003 5.524553585948708 S1.5125950000000001 6.773795 4.147753182415173e-16 6.773795 S-1.8796568043626753 6.280851085948709 -3.189602499999998 5.524553585948709 S-5.10998105002801 4.696843195637324 -5.86627855002801 3.386897500000002 S-6.379204999999999 1.5125950000000006 -6.379204999999999 7.81227298435479e-16 S-6.622576050028012 -2.0769518043626753 -5.866278550028013 -3.386897499999998 S-4.499548195637324 -4.768256085948707 -3.189602500000002 -5.524553585948707 S-1.512595000000001 -6.773795 -1.2443259547245516e-15 -6.773795 S1.8796568043626718 -6.2808510859487106 3.189602499999995 -5.524553585948712 S5.109981050028009 -4.696843195637325 5.866278550028009 -3.386897500000003 S6.379204999999999 -1.5125950000000012 6.379204999999999 -1.562454596870958e-15" fill="#00fff6" stroke-width="0">
+                        <animateTransform attributeName="transform" type="rotate" dur="10s" repeatCount="indefinite" values="0;60"></animateTransform>
+                      </path>
+                    </g><g transform="translate(1563.0745326666474,-18.193988601855892) scale(100)" opacity="0.4">
+                      <path d="M7.655046 0 C7.655046 1.815114 7.947091260033614 2.492342165235211 7.039534260033614 4.064276999999999 S5.399457834764788 5.721907303138451 3.8275230000000007 6.629464303138451 S1.8151140000000003 8.128554 4.977303818898207e-16 8.128554 S-2.2555881652352103 7.537021303138451 -3.827522999999998 6.629464303138452 S-6.1319772600336115 5.63621183476479 -7.039534260033612 4.064277000000002 S-7.655046 1.8151140000000008 -7.655046 9.374727581225749e-16 S-7.9470912600336145 -2.4923421652352094 -7.039534260033615 -4.064276999999997 S-5.399457834764791 -5.721907303138448 -3.8275230000000033 -6.629464303138449 S-1.8151140000000014 -8.128554 -1.493191145669462e-15 -8.128554 S2.2555881652352068 -7.537021303138453 3.827522999999995 -6.629464303138454 S6.131977260033611 -5.63621183476479 7.039534260033611 -4.064277000000003 S7.655045999999999 -1.8151140000000017 7.655046 -1.8749455162451497e-15" fill="#00bbf7" stroke-width="0">
+                        <animateTransform attributeName="transform" type="rotate" dur="5s" repeatCount="indefinite" values="0;60"></animateTransform>
+                      </path>
+                    </g><g transform="translate(1812.5043457333063,-211.67158404259817) scale(100)" opacity="0.4">
+                      <path d="M10.717064399999998 0 C10.717064399999998 2.5411595999999994 11.12592776404706 3.489279031329296 9.85534796404706 5.689987799999998 S7.559240968670702 8.01067022439383 5.3585322 9.281250024393831 S2.5411596000000003 11.379975599999998 6.968225346457489e-16 11.379975599999998 S-3.157823431329294 10.55182982439383 -5.358532199999996 9.281250024393831 S-8.584768164047055 7.8906965686707045 -9.855347964047056 5.689987800000003 S-10.717064399999998 2.5411596000000007 -10.717064399999998 1.3124618613716048e-15 S-11.125927764047058 -3.489279031329293 -9.85534796404706 -5.6899877999999955 S-7.559240968670705 -8.010670224393827 -5.3585322000000035 -9.281250024393827 S-2.5411596000000016 -11.379975599999998 -2.0904676039372465e-15 -11.379975599999998 S3.1578234313292888 -10.551829824393833 5.358532199999992 -9.281250024393835 S8.584768164047054 -7.890696568670705 9.855347964047054 -5.689987800000004 S10.717064399999998 -2.541159600000002 10.717064399999998 -2.6249237227432095e-15" fill="#0171d3" stroke-width="0">
+                        <animateTransform attributeName="transform" type="rotate" dur="3.3333333333333335s" repeatCount="indefinite" values="0;60"></animateTransform>
+                      </path>
+                    </g></g>
+                    </svg> -->
+
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:rgba(NaN, NaN, NaN, 0);display:block;z-index:1;position:relative" width="1879" height="931" preserveAspectRatio="xMidYMid" viewBox="0 0 1879 931">
+                        <g transform="translate(939.5,465.5) scale(-1,-1) translate(-939.5,-465.5)"><g transform="translate(1459.1454438888727,62.42167616512012) scale(100)" opacity="0.26">
+                          <path d="M6.379204999999999 0 C6.379204999999999 1.5125949999999997 6.6225760500280115 2.0769518043626767 5.866278550028012 3.3868974999999995 S4.499548195637323 4.768256085948709 3.1896025000000003 5.524553585948708 S1.5125950000000001 6.773795 4.147753182415173e-16 6.773795 S-1.8796568043626753 6.280851085948709 -3.189602499999998 5.524553585948709 S-5.10998105002801 4.696843195637324 -5.86627855002801 3.386897500000002 S-6.379204999999999 1.5125950000000006 -6.379204999999999 7.81227298435479e-16 S-6.622576050028012 -2.0769518043626753 -5.866278550028013 -3.386897499999998 S-4.499548195637324 -4.768256085948707 -3.189602500000002 -5.524553585948707 S-1.512595000000001 -6.773795 -1.2443259547245516e-15 -6.773795 S1.8796568043626718 -6.2808510859487106 3.189602499999995 -5.524553585948712 S5.109981050028009 -4.696843195637325 5.866278550028009 -3.386897500000003 S6.379204999999999 -1.5125950000000012 6.379204999999999 -1.562454596870958e-15" fill="#00fff6" stroke-width="0">
+                            <animateTransform attributeName="transform" type="rotate" dur="25s" repeatCount="indefinite" values="0;60"></animateTransform>
+                          </path>
+                        </g><g transform="translate(1563.0745326666474,-18.193988601855892) scale(100)" opacity="0.26">
+                          <path d="M7.655046 0 C7.655046 1.815114 7.947091260033614 2.492342165235211 7.039534260033614 4.064276999999999 S5.399457834764788 5.721907303138451 3.8275230000000007 6.629464303138451 S1.8151140000000003 8.128554 4.977303818898207e-16 8.128554 S-2.2555881652352103 7.537021303138451 -3.827522999999998 6.629464303138452 S-6.1319772600336115 5.63621183476479 -7.039534260033612 4.064277000000002 S-7.655046 1.8151140000000008 -7.655046 9.374727581225749e-16 S-7.9470912600336145 -2.4923421652352094 -7.039534260033615 -4.064276999999997 S-5.399457834764791 -5.721907303138448 -3.8275230000000033 -6.629464303138449 S-1.8151140000000014 -8.128554 -1.493191145669462e-15 -8.128554 S2.2555881652352068 -7.537021303138453 3.827522999999995 -6.629464303138454 S6.131977260033611 -5.63621183476479 7.039534260033611 -4.064277000000003 S7.655045999999999 -1.8151140000000017 7.655046 -1.8749455162451497e-15" fill="#00bbf7" stroke-width="0">
+                            <animateTransform attributeName="transform" type="rotate" dur="12.5s" repeatCount="indefinite" values="0;60"></animateTransform>
+                          </path>
+                        </g><g transform="translate(1812.5043457333063,-211.67158404259817) scale(100)" opacity="0.26">
+                          <path d="M10.717064399999998 0 C10.717064399999998 2.5411595999999994 11.12592776404706 3.489279031329296 9.85534796404706 5.689987799999998 S7.559240968670702 8.01067022439383 5.3585322 9.281250024393831 S2.5411596000000003 11.379975599999998 6.968225346457489e-16 11.379975599999998 S-3.157823431329294 10.55182982439383 -5.358532199999996 9.281250024393831 S-8.584768164047055 7.8906965686707045 -9.855347964047056 5.689987800000003 S-10.717064399999998 2.5411596000000007 -10.717064399999998 1.3124618613716048e-15 S-11.125927764047058 -3.489279031329293 -9.85534796404706 -5.6899877999999955 S-7.559240968670705 -8.010670224393827 -5.3585322000000035 -9.281250024393827 S-2.5411596000000016 -11.379975599999998 -2.0904676039372465e-15 -11.379975599999998 S3.1578234313292888 -10.551829824393833 5.358532199999992 -9.281250024393835 S8.584768164047054 -7.890696568670705 9.855347964047054 -5.689987800000004 S10.717064399999998 -2.541159600000002 10.717064399999998 -2.6249237227432095e-15" fill="#0171d3" stroke-width="0">
+                            <animateTransform attributeName="transform" type="rotate" dur="8.333333333333334s" repeatCount="indefinite" values="0;60"></animateTransform>
+                          </path>
+                        </g></g>
+                        </svg>
             </div>
 
             <div class="form login">
                 <div class="form-content">
-                    <header>Login</header>
+                    <header>Log-In</header>
                     <form action="#">
-                        <!-- මෙතෙන්ට Form Action එක දාන්න. -->
                         <div class="input-control">
                             <div class="field input-field">
-                                <input type="text" placeholder="Phone Number" class="input phone-number">
+                                <input type="text" id="Login-email" placeholder="Email" class="input e-mail">
                                 <div class="error"></div>
                             </div>
                         </div>
             
                         <div class="input-control">
                             <div class="field input-field">
-                                <input type="password" placeholder="PIN" class="password pin">
+                                <input type="password" id="Login-password" placeholder="Password" class="password password">
                                 <i class='bx bx-hide eye-icon'></i>
                                 <div class="error"></div>
                             </div>
                         </div>
 
                         <div class="form-link">
-                            <a href="#" class="forgot-pass">Forgot PIN?</a>
+                            <a href="#" class="forgot-pass"" onclick="forgotNotification();">Forgot Password?</a>
                         </div>
 
                         <div class="field button-field">
-                            <button>Login</button>
+                            <!-- <input type="submit" id="logIn" value="Log In"> -->
+                            <button class="logIn" id="logIn">Login</button>
                         </div>
                     </form>
 
@@ -70,23 +97,22 @@
             </div>
 
             <!-- Signup Form -->
-            <!-- මේක අල්ලන්න එපා ඔක්කොම Functions වැඩ. 😊 -->
 
             <div class="form signup">
                 <div class="form-content">
-                    <header>Signup</header>
+                    <header>Sign-Up</header>
                     <form action="#">
-                    <!-- මෙතෙන්ට Form Action එක දාන්න. -->
+                    <!-- <form onsubmit="signup(event)"> -->
                         <div class="input-control">
                             <div class="field input-field">
-                                <input type="text" placeholder="Phone Number" class="input phone-number">
+                                <input type="text" id="Signup-email" placeholder="Email" class="input e-mail">
                                 <div class="error"></div>
                             </div>
                         </div>
             
                         <div class="input-control">
                             <div class="field input-field">
-                                <input type="password" placeholder="Create PIN" class="password pin">
+                                <input type="password" id="Signup-password" placeholder="Create Password" class="password password">
                                 <i class='bx bx-hide eye-icon'></i>
                                 <div class="error"></div>
                             </div>
@@ -94,14 +120,15 @@
             
                         <div class="input-control">
                             <div class="field input-field">
-                                <input type="password" placeholder="Confirm PIN" class="password confirm-pin">
+                                <input type="password" id="confirm-password" placeholder="Confirm Password" class="password confirm-password">
                                 <i class='bx bx-hide eye-icon'></i>
                                 <div class="error"></div>
                             </div>
                         </div>
 
                         <div class="field button-field">
-                            <button>Signup</button>
+                            <!-- <input type="submit" id="signUp" value="Sign Up"> -->
+                            <button class="signUp" id="signUp">Signup</button>
                         </div>
                     </form>
 
@@ -111,21 +138,148 @@
                 </div>
 
             </div>
+
+            <div class="forgotNotification">
+                <h1 class="forgotHeader"><i class='bx bxs-error-alt forgotIcon'></i> Forgot Password?</h1>
+                <span class="forgotMessage">Relax and Try to Remember Your Password. 😊</span>
+            </div>
+
         </section>
 
         <!-- JavaScript -->
         <script src="assets/js/login.js"></script>
-        <script>
-            window.addEventListener("load", () => {
-              const loader = document.querySelector(".loader");
-        
-              loader.classList.add("loader--hidden");
-        
-              loader.addEventListener("transitionend", () => {
-                document.body.removeChild(loader);
-              });
+
+        <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+        import { 
+            getAuth, 
+            createUserWithEmailAndPassword, 
+            signInWithEmailAndPassword
+        } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyABwQpzIJhk5vkNbdC_FazG8FpMyVVfjrA",
+        authDomain: "urbanway-e1936.firebaseapp.com",
+        projectId: "urbanway-e1936",
+        storageBucket: "urbanway-e1936.appspot.com",
+        messagingSenderId: "957989416352",
+        appId: "1:957989416352:web:7176885570c30084dc48c5"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+        signUp.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            var email = document.getElementById('Signup-email').value;
+            var password = document.getElementById('Signup-password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+
+            if (password.trim() === confirmPassword.trim()) {
+                createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+
+                    set(ref(database, 'users/' + user.uid), {
+                        email: email,
+                        password: password
+                    })
+
+                    alert("Signed Up Successfully");
+                    console.log(user);
+                    // ...
+                })
+                .catch((error) => {
+                    // var errorMessage = error.message;
+                    // alert(errorMessage);
+                    // alert("Error" + error);
+                    // const errorCode = error.code;
+                    // const errorMessage = error.message;
+                    // console.log(errorCode);
+                    // console.log(errorMessage);
+
+                    showErrorNotification(error.message);
+                });
+
+            } else {
+                alert("Passwords doesn't match");
+            }
+        });
+
+        logIn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            var email = document.getElementById('Login-email').value;
+            var password = document.getElementById('Login-password').value;
+
+            if (email.length < 4) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('Please enter a password with 6 digits.');
+                return;
+            }
+
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+
+                const date = new Date();
+                update(ref(database, 'users/' + user.uid), {
+                        last_login: date,
+                    })
+
+                alert("Logged In Successfully");
+                window.location = "index.html";
+                console.log(user);
+                // ...
+            })
+            .catch((error) => {
+            
+                // alert("Error" + error);
+
+                /* Show Errors in Alerts*/
+
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
+                // if (errorCode === 'auth/wrong-password') {
+                //     alert('Wrong password.');
+                // } else {
+                //     alert(errorMessage);
+                // }
+                // console.log(errorCode);
+                // console.log(errorMessage);
+
+                showErrorNotification(error.message);
             });
-          </script>
-      
+        });
+
+        // Notications
+
+        const errorNotification = document.querySelector(".errorNotification");
+
+        const showErrorNotification = (message) => {
+            errorNotification.textContent = message;
+            errorNotification.classList.add("active");
+            setTimeout(() => {
+                errorNotification.classList.remove("active");
+                errorNotification.textContent = '';
+            }, 4000);
+        }
+
+    </script>
     </body>
 </html>

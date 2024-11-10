@@ -1,9 +1,3 @@
-<?php
-require_once('connection.php');
-$query = "select * from shedule";
-$result = mysqli_query($conn, $query);
-?>
-
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -43,7 +37,25 @@ $result = mysqli_query($conn, $query);
 
                 </div>
 
-                <a href="login.html" class="login-btn">Login</a>
+                <div class="action">
+                    <div class="profile" onclick="menuToggle();">
+                        <img src="assets/img/user2.png" alt="user">
+                    </div>
+                    <div class="menu">
+                        <h3 id="name" class="usersname"> </h3>
+                        <h5 id="user" class="usersmail"> </h5>
+                        <ul>
+                            <li> <i class='bx bx-user-circle' class="usermenu_item"></i>&nbsp;&nbsp; <a href="#">My Profile</a></i></li>
+                            <li> <i class='bx bx-history' class="usermenu_item"></i>&nbsp;&nbsp; <a href="#">History</a></i></li>
+                            <li> <i class='bx bx-cog' class="usermenu_item"></i>&nbsp;&nbsp; <a href="#">Settings</a></i></li>
+                            <li id="signout"> <i class='bx bx-exit' class="usermenu_item"></i>&nbsp;&nbsp; <a href="#">Log-Out</a></i></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="loginButton">
+                    <a href="login.html" class="login-btn">Login</a>
+                </div>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class='bx bx-menu'></i>
@@ -86,23 +98,6 @@ $result = mysqli_query($conn, $query);
                           <th>To</th>
                       </tr>
           
-                      <?php
-                      while ($row = mysqli_fetch_assoc($result)) {
-                      ?>
-                          <tr>
-                              <td><?php echo $row['Bus_id'] ?></td>
-                              <td><?php echo $row['Train_id'] ?></td>
-                              <td><?php echo $row['Train_Name'] ?></td>
-                              <td><?php echo $row['Bus_Name'] ?></td>
-                              <td><?php echo $row['Date'] ?></td>
-                              <td><?php echo $row['Time'] ?></td>
-                              <td><?php echo $row['No_of_Seats'] ?></td>
-                              <td><?php echo $row['From_W'] ?></td>
-                              <td><?php echo $row['To_W'] ?></td>
-                          </tr>
-                      <?php
-                      }
-                      ?>
                   </table>
               </div>
               
@@ -164,13 +159,13 @@ $result = mysqli_query($conn, $query);
                         <h3 class="footer__subtitle">About</h3>
                         <ul>
                             <li class="footer__item">
-                                <a href="" class="footer__link">About Us</a>
+                                <a href="oops.html" class="footer__link">About Us</a>
                             </li>
                             <li class="footer__item">
-                                <a href="" class="footer__link">Features</a>
+                                <a href="oops.html" class="footer__link">Features</a>
                             </li>
                             <li class="footer__item">
-                                <a href="" class="footer__link">New & Blog</a>
+                                <a href="oops.html" class="footer__link">News & Blog</a>
                             </li>
                         </ul>
                     </div>
@@ -179,13 +174,13 @@ $result = mysqli_query($conn, $query);
                         <h3 class="footer__subtitle">Company</h3>
                         <ul>
                             <li class="footer__item">
-                                <a href="" class="footer__link">Team</a>
+                                <a href="oops.html" class="footer__link">Team</a>
                             </li>
                             <li class="footer__item">
-                                <a href="" class="footer__link">Plan Pricing</a>
+                                <a href="oops.html" class="footer__link">Plan Pricing</a>
                             </li>
                             <li class="footer__item">
-                                <a href="" class="footer__link">Become a member</a>
+                                <a href="oops.html" class="footer__link">Become a member</a>
                             </li>
                         </ul>
                     </div>
@@ -194,13 +189,13 @@ $result = mysqli_query($conn, $query);
                         <h3 class="footer__subtitle">Support</h3>
                         <ul>
                             <li class="footer__item">
-                                <a href="" class="footer__link">FAQs</a>
+                                <a href="oops.html" class="footer__link">FAQs</a>
                             </li>
                             <li class="footer__item">
-                                <a href="" class="footer__link">Support Center</a>
+                                <a href="oops.html" class="footer__link">Support Center</a>
                             </li>
                             <li class="footer__item">
-                                <a href="" class="footer__link">Contact Us</a>
+                                <a href="oops.html" class="footer__link">Contact Us</a>
                             </li>
                         </ul>
                     </div>
@@ -209,8 +204,8 @@ $result = mysqli_query($conn, $query);
                 <div class="footer__rights">
                     <b><p class="footer__copy">&#169; Team 5 - Sahan Tashiya Gihan Abishek Inura Layan. ICT 142-3 Group Project</p></b>
                     <div class="footer__terms">
-                        <a href="#" class="footer__terms-link">Terms of Service</a>
-                        <a href="#" class="footer__terms-link">Privacy Policy</a>
+                        <a href="oops.html" class="footer__terms-link">Terms of Service</a>
+                        <a href="oops.html" class="footer__terms-link">Privacy Policy</a>
                     </div>
                 </div>
             </div>
@@ -226,5 +221,99 @@ $result = mysqli_query($conn, $query);
 
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
+
+        <script>
+            function menuToggle(){
+                const toggleMenu = document.querySelector('.menu');
+                toggleMenu.classList.toggle('active')
+            }
+        </script>
+  
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+            import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+            import { 
+                getAuth, 
+                createUserWithEmailAndPassword, 
+                signInWithEmailAndPassword,
+                onAuthStateChanged,
+                signOut
+            } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+  
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+            apiKey: "AIzaSyABwQpzIJhk5vkNbdC_FazG8FpMyVVfjrA",
+            authDomain: "urbanway-e1936.firebaseapp.com",
+            projectId: "urbanway-e1936",
+            storageBucket: "urbanway-e1936.appspot.com",
+            messagingSenderId: "957989416352",
+            appId: "1:957989416352:web:7176885570c30084dc48c5"
+            };
+  
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const database = getDatabase(app);
+            const auth = getAuth();
+  
+            const secretContent = document.querySelector(".action");
+            const loginButton = document.querySelector(".login-btn");
+  
+            secretContent.style.display = "none";
+  
+            auth.onAuthStateChanged(function(user) {
+                if(user) {
+  
+                    var email = user.email
+  
+                    var users = document.getElementById("user")
+                    var text = document.createTextNode(email)
+  
+                    users.appendChild(text)
+  
+                    
+                }
+            })
+  
+            auth.onAuthStateChanged(function(user) {
+                if (user) {
+                    const email = user.email;
+  
+                    const username = email.split('@')[0];
+  
+                    const nameElement = document.getElementById('name');
+                    if (nameElement) {
+                        nameElement.innerText = username;
+                    }
+                }
+            })
+  
+            const checkAuthState = async() => {
+                auth.onAuthStateChanged(function(user) {
+                    if(user) {
+                        secretContent.style.display = "block";
+                        loginButton.style.display = "none";
+                    } else {
+                        secretContent.style.display = "none";
+                        loginButton.style.display = "block";
+                    }
+                })
+            }
+  
+  
+            let signOutButton = document.getElementById("signout")
+  
+            signOutButton.addEventListener("click", (e) => {
+                e.preventDefault()
+  
+                auth.signOut()
+                window.location = "index.html"
+            })
+            
+            checkAuthState();
+  
+        </script>
     </body>
 </html>

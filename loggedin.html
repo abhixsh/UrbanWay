@@ -11,7 +11,7 @@
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
         <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/loggedin.css">
 
         <title>Urbanway</title>
     </head>
@@ -42,20 +42,18 @@
                         <img src="assets/img/user2.png" alt="user">
                     </div>
                     <div class="menu">
-                        <h3 id="name" class="usersname"> </h3>
+                        <h3 id="name" class="usersname">  </h3>
                         <h5 id="user" class="usersmail"> </h5>
                         <ul>
-                            <li> <i class='bx bx-user-circle' class="usermenu_item"></i>&nbsp;&nbsp; <a href="dashboard.html">My Profile</a></i></li>
-                            <li> <i class='bx bx-history' class="usermenu_item"></i>&nbsp;&nbsp; <a href="dashboard.html">History</a></i></li>
-                            <li> <i class='bx bx-cog' class="usermenu_item"></i>&nbsp;&nbsp; <a href="dashboard.html">Settings</a></i></li>
+                            <li> <i class='bx bx-user-circle' class="usermenu_item"></i>&nbsp;&nbsp; <a href="#">My Profile</a></i></li>
+                            <li> <i class='bx bx-history' class="usermenu_item"></i>&nbsp;&nbsp; <a href="#">History</a></i></li>
+                            <li> <i class='bx bx-cog' class="usermenu_item"></i>&nbsp;&nbsp; <a href="#">Settings</a></i></li>
                             <li id="signout"> <i class='bx bx-exit' class="usermenu_item"></i>&nbsp;&nbsp; <a href="#">Log-Out</a></i></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="loginButton">
-                    <a href="login.html" class="login-btn">Login</a>
-                </div>
+                <a href="login.html" class="login-btn">Login</a>
 
                 <div class="nav__toggle" id="nav-toggle">
                     <i class='bx bx-menu'></i>
@@ -73,7 +71,7 @@
                     <div class="home__data">
                         <span class="home__data-subtitle">Revolutionize your travel experience</span>
                         <h1 class="home__data-title"> Effortless Booking <br> and <b> Scheduling <br> for Everyone </b></h1>
-                        <a href="login.html" class="button" id="booknow-btn">Book Now!</a>
+                        <a href="login.html" class="button">Book Now!</a>
 
                     </div>
 
@@ -99,7 +97,7 @@
                         <h2 class="section__title about__title">Book Your <br> Journey Now!</h2>
                         <p class="about__description">Skip the line, and explore a world of seamless ticket booking, finding the best schedules and securing your seats in just a few clicks.
                         </p>
-                        <a href="schedule.html" class="button">View schedules</a>
+                        <a href="schedulespage.html" class="button">View schedules</a>
                     </div>
 
                     <div class="about__img">
@@ -175,9 +173,7 @@
                         </div>
 
                         <button class="button button--flex place__button">
-                            <a href="https://en.wikipedia.org/wiki/Colombo" target="_blank" >
-                                <i class='bx bxs-chevron-right rightbtn__icon' ></i>
-                            </a>
+                            <i class='bx bxs-chevron-right' ></i>
                         </button>
                     </div>
 
@@ -197,9 +193,7 @@
                         </div>
 
                         <button class="button button--flex place__button">
-                            <a href="https://en.wikipedia.org/wiki/Kandy" target="_blank" >
-                                <i class='bx bxs-chevron-right rightbtn__icon' ></i>
-                            </a>
+                            <i class='bx bxs-chevron-right' ></i>
                         </button>
                     </div>
 
@@ -219,9 +213,7 @@
                         </div>
 
                         <button class="button button--flex place__button">
-                            <a href="https://en.wikipedia.org/wiki/Galle" target="_blank" >
-                                <i class='bx bxs-chevron-right rightbtn__icon' ></i>
-                            </a>
+                            <i class='bx bxs-chevron-right' ></i>
                         </button>
                     </div>
 
@@ -241,9 +233,7 @@
                         </div>
 
                         <button class="button button--flex place__button">
-                            <a href="https://en.wikipedia.org/wiki/Nuwara_Eliya" target="_blank" >
-                                <i class='bx bxs-chevron-right rightbtn__icon' ></i>
-                            </a>
+                            <i class='bx bxs-chevron-right' ></i>
                         </button>
                     </div>
 
@@ -263,9 +253,7 @@
                         </div>
 
                         <button class="button button--flex place__button">
-                            <a href="https://en.wikipedia.org/wiki/Trincomalee" target="_blank" >
-                                <i class='bx bxs-chevron-right rightbtn__icon' ></i>
-                            </a>
+                            <i class='bx bxs-chevron-right' ></i>
                         </button>
                     </div>
 
@@ -285,9 +273,7 @@
                         </div>
 
                         <button class="button button--flex place__button">
-                            <a href="https://en.wikipedia.org/wiki/Negombo" target="_blank" >
-                                <i class='bx bxs-chevron-right rightbtn__icon' ></i>
-                            </a>
+                            <i class='bx bxs-chevron-right' ></i>
                         </button>
                     </div>
                 </div>
@@ -429,6 +415,12 @@
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
 
+        <!--=============== Others ===============-->
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://unpkg.com/@barba/core"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
         <script>
             function menuToggle(){
                 const toggleMenu = document.querySelector('.menu');
@@ -465,11 +457,6 @@
             const database = getDatabase(app);
             const auth = getAuth();
 
-            const secretContent = document.querySelector(".action");
-            const loginButton = document.querySelector(".login-btn");
-
-            secretContent.style.display = "none";
-
             auth.onAuthStateChanged(function(user) {
                 if(user) {
 
@@ -497,17 +484,6 @@
                 }
             })
 
-            const checkAuthState = async() => {
-                auth.onAuthStateChanged(function(user) {
-                    if(user) {
-                        secretContent.style.display = "block";
-                        loginButton.style.display = "none";
-                    } else {
-                        secretContent.style.display = "none";
-                        loginButton.style.display = "block";
-                    }
-                })
-            }
 
             let signOutButton = document.getElementById("signout")
 
@@ -518,8 +494,6 @@
                 window.location = "index.html"
             })
             
-            checkAuthState();
-
         </script>
 
     </body>

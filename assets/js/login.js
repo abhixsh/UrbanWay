@@ -28,16 +28,16 @@ links.forEach(link => {
 })
 
 
-// Phone number validation
-function validatePhoneNumber(phoneNumber) {
-    const phoneNumberPattern = /^[0-9]{10}$/;
-    return phoneNumber.match(phoneNumberPattern);
+// E-mail validation
+function validateEMail(eMail) {
+    const eMailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return eMail.match(eMailPattern);
 }
 
-// PIN validation
-function validatePIN(pin) {
-    const pinPattern = /^[0-9]{4}$/;
-    return pin.match(pinPattern);
+// Password validation
+function validatePassword(password) {
+    const passwordPattern = /^[0-9]{6}$/;
+    return password.match(passwordPattern);
 }
 
 // Handle input field validation
@@ -56,64 +56,76 @@ function showSuccess(inputField) {
 }
 
 // Handle form submissions
-const signupForm = document.querySelector(".signup form");
-signupForm.addEventListener("submit", function (e) {
+const signUptButton = document.querySelector(".signUp");
+signUptButton.addEventListener("click", function (e) {
+// const signupForm = document.querySelector(".signup form");
+// signupForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    const phoneNumberInput = document.querySelector(".signup .phone-number");
-    const pinInput = document.querySelector(".signup .pin");
-    const confirmPinInput = document.querySelector(".signup .confirm-pin");
+    const eMailInput = document.querySelector(".signup .e-mail");
+    const passwordInput = document.querySelector(".signup .password");
+    const confirmPasswordInput = document.querySelector(".signup .confirm-password");
 
-    const phoneNumber = phoneNumberInput.value;
-    const pin = pinInput.value;
-    const confirmPin = confirmPinInput.value;
+    const eMail = eMailInput.value;
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
 
-    if (!validatePhoneNumber(phoneNumber)) {
-        showError(phoneNumberInput, "Please enter a valid phone number with 10 digits.");
+    if (!validateEMail(eMail)) {
+        showError(eMailInput, "Please enter a valid E-mail Address.");
     } else {
-        showSuccess(phoneNumberInput);
+        showSuccess(eMailInput);
     }
 
-    if (!validatePIN(pin)) {
-        showError(pinInput, "Please enter a valid 4-digit PIN.");
+    if (!validatePassword(password)) {
+        showError(passwordInput, "Please enter a valid 6-digit Password.");
     } else {
-        showSuccess(pinInput);
+        showSuccess(passwordInput);
     }
 
-    if (pin !== confirmPin) {
-        showError(confirmPinInput, "PINs do not match.");
+    if (password !== confirmPassword) {
+        showError(confirmPasswordInput, "Passwords do not match.");
     } else {
-        showSuccess(confirmPinInput);
+        showSuccess(confirmPasswordInput);
     }
 
-    if (validatePhoneNumber(phoneNumber) && validatePIN(pin) && pin === confirmPin) {
-        alert("Signup successful!");
-    } 
+    // if (validateEMail(eMail) && validatePassword(password) && password === confirmPassword) {
+    //     alert("Signup successful!");
+    // } 
 });
 
-const loginForm = document.querySelector(".login form");
-loginForm.addEventListener("submit", function (e) {
+const logIntButton = document.querySelector(".logIn");
+logIntButton.addEventListener("click", function (e) {
+// const loginForm = document.querySelector(".login form");
+// loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    const phoneNumberInput = document.querySelector(".login .phone-number");
-    const pinInput = document.querySelector(".login .pin");
+    const eMailInput = document.querySelector(".login .e-mail");
+    const passwordInput = document.querySelector(".login .password");
 
-    const phoneNumber = phoneNumberInput.value;
-    const pin = pinInput.value;
+    const eMail = eMailInput.value;
+    const password = passwordInput.value;
 
-    if (!validatePhoneNumber(phoneNumber)) {
-        showError(phoneNumberInput, "Please enter a valid phone number with 10 digits.");
+    if (!validateEMail(eMail)) {
+        showError(eMailInput, "Please enter a valid E-mail Address.");
     } else {
-        showSuccess(phoneNumberInput);
+        showSuccess(eMailInput);
     }
 
-    if (!validatePIN(pin)) {
-        showError(pinInput, "Please enter a valid 4-digit PIN.");
+    if (!validatePassword(password)) {
+        showError(passwordInput, "Please enter a valid 6-digit Password.");
     } else {
-        showSuccess(pinInput);
+        showSuccess(passwordInput);
     }
 
-    if (validatePhoneNumber(phoneNumber) && validatePIN(pin)) {
-        alert("Login successful!");
-    }
+    // if (validateEMail(eMail) && validatePassword(password)) {
+    //     alert("Login successful!");
+    // }
 });
 
+// Forgot Password Notification 
 
+function forgotNotification(){
+    const forgot = document.querySelector('.forgotNotification');
+    forgot.classList.add('active')
+    setTimeout(() => {
+    forgot.classList.remove("active");
+}, 5000);
+}

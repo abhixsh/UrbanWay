@@ -97,3 +97,6 @@ sr.reveal(`.about__img-overlay,
     origin: 'right',
     interval: 100,
 })
+
+
+console.log("Hello World");

@@ -7,32 +7,34 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+
+::-webkit-scrollbar{
+    width: none;
+}
 .container{
     height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
     column-gap: 30px;
+    background: linear-gradient(62deg, #8ec5fc 0%, #c3f5fc 100%);
 }
 .bg-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    width: 100%;
-    opacity: 30%;
-    background-size: cover;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
 }
 .form{
     position: absolute;
+    z-index: 4;
     max-width: 430px;
     width: 100%;
     padding: 30px;
     border-radius: 16px;
     background: #FFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .form.signup{
     opacity: 0;
@@ -75,6 +77,7 @@ form{
     outline: none;
     padding: 0 15px;
     border: 1px solid#CACACA;
+    background: #8b8b8b17;
 }
 .field input:focus{
     border-bottom-width: 2px;
@@ -87,6 +90,17 @@ form{
     font-size: 18px;
     color: #8b8b8b;
     cursor: pointer;
+    padding: 5px;
+    background: #8b8b8b57;
+    border-radius: 50px;
+}
+.email-icon{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #8b8b8b;
     padding: 5px;
 }
 .field button{
@@ -113,16 +127,41 @@ form{
     text-decoration: none;
 }
 .form-content a:hover{
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Showing Errors */
 .field input.error-input {
     border-color: #ff3860;
+    background-color: #ff737317;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(4px);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .field input.success-input {
     border-color: #09c372;
+    background-color: #09c37217;
 }
 
 .error {
@@ -133,76 +172,134 @@ form{
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-    .forms {
-        max-width: 100%;
-    }
-
-    .field button {
+    .container{
+        height: 100%;
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 30px;
+    }
+    .bg-img {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+    }
+    .form{
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 4;
+        max-width: 430px;
+        width: 100%;
+        padding: 30px;
+        border-radius: 16px;
+        background: #FFF;
     }
 }
 
-/* Loading Animation Begin*/
+/* Notifications */
 
-.loader {
+/* Login Errors */
+
+.errorNotification {
+    width: 200px;
+    padding: 20px;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    left: 50%;
+    margin-left: -100px;
+    top: 20px;
+    border-radius: 15px 15px 15px 15px;
     background: #ffffff;
-    transition: opacity 0.75s, visibility 0.75s;
-  }
-  
-  .loader--hidden {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.5s ease-in-out;
+    z-index: 998;
+    text-align: center;
+    color: black;
+    transition: all 0.3s ease;
+    margin-top: -100%;
+}
+
+.errorNotification.active{
+    margin-top: 0;
+    transition: all 0.3s ease;
+}
+
+/* Forgot Password */
+
+.forgotNotification {
+    width: 600px;
+    padding: 20px;
+    position: fixed;
+    align-items: center;
+    top: 20px;
+    border-radius: 15px 15px 15px 15px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.5s ease-in-out;
+    z-index: 998;
+    text-align: center;
+    color: black;
+    transition: all 1s ease;
+    /* margin-top: -100%; */
     opacity: 0;
-    visibility: hidden;
-  }
-  
-  .ring {
-    --uib-size: 40px;
-    --uib-speed: 2s;
-    --uib-color: black;
-  
-    height: var(--uib-size);
-    width: var(--uib-size);
-    vertical-align: middle;
-    transform-origin: center;
-    animation: rotate var(--uib-speed) linear infinite;
-  }
-  
-  .ring circle {
-    fill: none;
-    stroke: var(--uib-color);
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-    stroke-linecap: round;
-    animation: stretch calc(var(--uib-speed) * 0.75) ease-in-out infinite;
-  }
-  
-  @keyframes rotate {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  @keyframes stretch {
-    0% {
-      stroke-dasharray: 1, 200;
-      stroke-dashoffset: 0;
-    }
-    50% {
-      stroke-dasharray: 90, 200;
-      stroke-dashoffset: -35px;
-    }
-    100% {
-      stroke-dashoffset: -124px;
-    }
-  }
-  
-  /* Loading Animation End 😊*/
-  
-  
+}
+
+.forgotNotification::before{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-45deg, #60efff 0%, #0061ff 100% );
+    transform: translate3d(0px, 20px, 0) scale(0.95);
+    filter: blur(20px);
+    opacity: var(0.7);
+    transition: opacity 0.3s;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.forgotNotification::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.forgotNotification.active{
+    /* margin-top: 0; */
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+.forgotHeader {
+    font-size: 20px;
+    color: #0171d3;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.forgotMessage {
+    font-size: 15px;
+    color: #9b9b9b;
+    text-align: center;
+}
+
+.forgotHeader.forgotIcon {
+    padding-top: 50px;
+    font-size: 25px;
+    color: #0171d3;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
