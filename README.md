@@ -20,7 +20,8 @@ This website allows users to book their bus tickets, and train tickets, view bus
 - HTML
 - CSS
 - JavaScript
-- PHP 
+- PHP
+- Swiper JS
 - MySQL
 - Boxicons 
 - ScrollReveal.js
